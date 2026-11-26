@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101510">
+<title>We's Gym</title>
+<style>
+:root{color-scheme:dark;--bg:#0c120e;--panel:#151d17;--panel2:#1b261e;--line:#2b3a2e;--green:#9be26b;--green2:#c4f49d;--text:#edf4ed;--muted:#a2b1a3;--soft:#718174;--danger:#e9a0a0}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#1a2a1d 0,#101711 36%,var(--bg) 78%);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);padding:18px 14px 44px}.wrap{max-width:720px;margin:auto}.top{padding:9px 4px 18px}.eyebrow{color:var(--green);font-size:11px;letter-spacing:.17em;font-weight:850}.h1{font-size:31px;line-height:1.08;font-weight:900;margin:8px 0}.subtitle{color:var(--muted);font-size:13px;line-height:1.5}.card{background:linear-gradient(145deg,rgba(26,36,28,.98),rgba(18,26,20,.98));border:1px solid var(--line);border-radius:19px;padding:16px;margin:12px 0;box-shadow:0 12px 30px rgba(0,0,0,.12)}.homeTitle{font-size:23px;font-weight:850;margin:8px 0 6px}.homeText{color:var(--muted);font-size:13px;line-height:1.5;margin:0 0 15px}.userGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.userBtn{border:1px solid #476044;background:#203024;color:var(--text);padding:17px 12px;border-radius:15px;text-align:left;cursor:pointer}.userBtn strong{display:block;font-size:17px}.userBtn span{display:block;color:var(--muted);font-size:11px;margin-top:4px}.userBtn:active,.day:active,.reset:active{transform:scale(.98)}.summary{display:flex;justify-content:space-between;align-items:center;gap:12px}.summary strong{font-size:15px}.progress{height:9px;background:#29352c;border-radius:20px;overflow:hidden;margin-top:12px}.bar{height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--green2));transition:width .2s}.progressMeta{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin-top:7px}.daytabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin:14px 0}.daytabs.short{grid-template-columns:repeat(3,minmax(0,1fr))}.day{border:1px solid var(--line);background:#151e17;color:var(--muted);padding:11px 3px;border-radius:12px;font-weight:800;font-size:12px;cursor:pointer}.day small{display:block;font-size:9px;font-weight:600;opacity:.8;margin-top:3px}.day.active{background:var(--green);color:#142016;border-color:var(--green)}.titleRow{display:flex;justify-content:space-between;align-items:center;gap:10px}.dayTitle{font-size:20px;font-weight:850;margin:0}.badge{font-size:10px;color:var(--green2);background:#243527;padding:6px 9px;border-radius:99px;white-space:nowrap;font-weight:800;letter-spacing:.04em}.desc{color:var(--muted);font-size:13px;margin:7px 0 13px;line-height:1.45}.item{display:flex;gap:11px;align-items:flex-start;padding:13px 1px;border-bottom:1px solid #29352c}.item:last-child{border-bottom:0}.item input{accent-color:var(--green);width:20px;height:20px;margin:2px 0 0;flex-shrink:0}.item.checked .name{text-decoration:line-through;color:#879589}.item.checked .how{opacity:.55}.itemMain{min-width:0;flex:1}.itemTop{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}.name{font-weight:800;font-size:14px}.dose{font-size:11px;color:var(--green2);margin-top:3px;font-weight:750}.how{font-size:12px;color:var(--muted);margin-top:5px;line-height:1.45}.equip{font-size:10px;color:#91a192;background:#202b22;border:1px solid #2d3c30;border-radius:7px;padding:4px 6px;white-space:nowrap}.reset{background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:11px;font-weight:700;cursor:pointer}.switch{margin:0 0 10px}.foot{color:var(--muted);font-size:12px;line-height:1.55}.note{background:#202b22;border:1px solid #344536;border-radius:12px;padding:11px 12px;color:var(--muted);font-size:12px;line-height:1.5;margin-top:12px}.note strong{color:var(--green2)}.hidden{display:none!important}.sectionLabel{font-size:11px;color:var(--muted);font-weight:800;letter-spacing:.1em;margin:2px 0 8px}.optional{border:1px solid #4b633e;background:#1b2a1d;color:var(--green2);padding:5px 8px;border-radius:8px;font-size:10px;font-weight:800}.footer{text-align:center;color:var(--soft);font-size:11px;padding:12px 0}.actions{display:flex;gap:8px;align-items:center}
+@media(max-width:390px){body{padding:14px 10px 35px}.card{padding:13px}.h1{font-size:28px}.day{font-size:11px}.equip{font-size:9px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="top">
+  <div class="eyebrow">PERSONAL TRAINING • WORKOUT TRACKER</div>
+  <div class="h1" id="brand">WE'S GYM <span style="color:var(--green)">↗</span></div>
+  <div class="subtitle" id="subtitle">Pilih profil untuk membuka jadwal latihan.</div>
+</header>
+<section class="card" id="home">
+  <div class="eyebrow">WHO'S TRAINING TODAY?</div>
+  <div class="homeTitle">Choose your dashboard</div>
+  <p class="homeText">Progress We dan My disimpan terpisah di perangkat ini.</p>
+  <div class="userGrid">
+    <button class="userBtn" onclick="chooseUser('A')"><strong>A · We</strong><span>5-day workout • Strength & fitness</span></button>
+    <button class="userBtn" onclick="chooseUser('B')"><strong>B · My</strong><span>2 main days + 1 optional • Fitness & strength</span></button>
+  </div>
+</section>
+<div id="dashboard" class="hidden">
+  <button class="reset switch" onclick="goHome()">← Ganti profil</button>
+  <section class="card">
+    <div class="summary">
+      <div><div class="eyebrow">DAILY PROGRESS</div><strong id="count">0 / 0 selesai</strong></div>
+      <div class="actions"><button class="reset" id="reset">Reset hari</button></div>
+    </div>
+    <div class="progress"><div class="bar" id="bar"></div></div>
+    <div class="progressMeta"><span id="progressLabel">Checklist latihan</span><span id="percent">0%</span></div>
+  </section>
+  <nav class="daytabs" id="tabs" aria-label="Pilih hari latihan"></nav>
+  <section class="card">
+    <div class="titleRow"><h2 class="dayTitle" id="title"></h2><span class="badge" id="tag"></span></div>
+    <p class="desc" id="desc"></p>
+    <div id="list"></div>
+    <div class="note" id="dayNote"></div>
+  </section>
+  <section class="card">
+    <div class="eyebrow">QUICK REMINDERS</div>
+    <p class="foot">Pemanasan 5–10 menit sebelum latihan. Mulai dengan beban yang bisa dikendalikan, istirahat sekitar 1–2 menit atau lebih bila perlu, dan jaga teknik di setiap repetisi.</p>
+    <p class="foot">Checklist hanya mencatat latihan yang selesai. Jangan memaksakan set saat teknik mulai berantakan. Hentikan latihan bila muncul nyeri tajam, pusing, atau sesak yang tidak biasa.</p>
+  </section>
+  <p class="footer">Consistency over intensity 🌱</p>
+</div>
+</main>
+<script>
+const plansA = [
+ {name:'MON',short:'Back / Biceps',title:'Monday · Back & Biceps',tag:'BACK + BICEPS',desc:'Punggung • bisep',note:'Fokus pada gerakan menarik untuk punggung, lalu lanjutkan latihan bisep. Jaga badan tetap stabil dan hindari mengayun beban.',items:[
+  ['Fixed Lat Pulldown','3 × 12','Tarik bar ke arah dada atas. Hindari menarik bar ke belakang leher.','Fixed Pulldown'],
+  ['Standing Cable Row','3 × 12','Berdiri stabil menghadap pulley, tarik handle ke arah badan tanpa mengayun.','Cable DAP'],
+  ['Dumbbell Bent-Over Row','2 × 12','Condongkan badan dengan punggung netral, tarik dumbbell ke arah sisi pinggang secara terkontrol.','Dumbbell'],
+  ['Dumbbell Bicep Curl','3 × 12','Tekuk siku untuk mengangkat dumbbell, jaga siku dekat sisi tubuh.','Dumbbell'],
+  ['Dumbbell Hammer Curl','2 × 12','Pegang dumbbell dengan telapak saling berhadapan, lalu tekuk siku secara terkontrol.','Dumbbell']
+]},
+ {name:'TUE',short:'Chest / Triceps',title:'Tuesday · Chest & Triceps',tag:'CHEST + TRICEPS',desc:'Dada • trisep',note:'Jaga gerakan tetap terkontrol. Pada latihan trisep, pertahankan siku stabil dan hindari mengayunkan badan.',items:[
+  ['Chest Press','3 × 12','Dorong handle ke depan dengan punggung tetap tersangga, lalu kembalikan perlahan.','Chest Press Machine'],
+  ['Incline Barbell Bench Press','3 × 12','Lakukan pada bangku incline dengan setup aman dan bantuan/spotter bila diperlukan.','Barbell + incline bench'],
+  ['Cable Chest Press','3 × 12','Berdiri membelakangi pulley, dorong kedua handle ke depan dengan posisi tubuh stabil.','Cable DAP'],
+  ['Cable Triceps Pushdown','3 × 12','Jaga siku dekat sisi tubuh dan dorong handle ke bawah secara terkontrol.','Cable DAP'],
+  ['Single-Arm Tricep Pushdown','3 × 12 per tangan','Lakukan satu tangan bergantian, pertahankan siku dekat tubuh, dan dorong handle ke bawah.','Cable DAP']
+]},
+ {name:'WED',short:'Legs',title:'Wednesday · Legs',tag:'LOWER BODY',desc:'Paha depan • paha belakang • glutes • betis',note:'Hip thrust dapat menggunakan barbell dengan bangku yang stabil. Utamakan teknik dan rentang gerak yang nyaman.',items:[
+  ['Goblet Squat','3 × 12','Pegang dumbbell dekat dada, lakukan squat sesuai rentang gerak yang nyaman.','Dumbbell'],
+  ['Leg Extension','2 × 12','Luruskan lutut pada mesin, lalu turunkan beban secara perlahan.','Leg Extension Machine'],
+  ['Lying Leg Curl','3 × 12','Tekuk lutut pada mesin lying leg curl, lalu kembalikan perlahan.','Lying Leg Curl Machine'],
+  ['Barbell Hip Thrust','3 × 12','Sandarkan punggung atas pada bangku yang stabil, dorong pinggul ke atas dengan kontrol.','Barbell + bangku stabil'],
+  ['Dumbbell Calf Raise','2 × 12','Angkat tumit secara terkontrol, lalu turunkan perlahan.','Dumbbell']
+]},
+ {name:'THU',short:'Shoulders',title:'Thursday · Shoulders',tag:'SHOULDERS',desc:'Bahu depan • bahu samping • bahu belakang • trapezius',note:'Bahu depan juga bekerja saat Chest Day. Gunakan beban ringan-terkontrol untuk Front Raise dan Reverse Fly.',items:[
+  ['Shoulder Press Machine','3 × 12','Dorong handle ke atas dalam rentang gerak yang nyaman, tanpa mengunci siku.','Shoulder Press Machine'],
+  ['Dumbbell Lateral Raise','3 × 12','Angkat dumbbell ke samping sampai rentang nyaman, lalu turunkan perlahan.','Dumbbell'],
+  ['Dumbbell Reverse Fly','2 × 12','Condongkan badan dengan punggung netral, buka dumbbell ke samping secara terkontrol.','Dumbbell'],
+  ['Dumbbell Front Raise','2 × 12','Angkat dumbbell ke depan sampai sekitar tinggi bahu jika nyaman, lalu turunkan perlahan.','Dumbbell'],
+  ['Dumbbell Shrug','2 × 12','Angkat bahu ke arah atas secara terkontrol, lalu turunkan perlahan tanpa memutar bahu.','Dumbbell']
+]},
+ {name:'FRI',short:'Cardio / Core',title:'Friday · Cardio & Core',tag:'CARDIO + CORE',desc:'Stamina • kekuatan otot inti • kebugaran umum',note:'Jaga intensitas kardio tetap nyaman. Kamu masih bisa berbicara saat kardio sedang. Plank dilakukan dengan posisi tubuh stabil.',items:[
+  ['Treadmill','15–20 menit','Jalan atau joging ringan pada intensitas yang sesuai kemampuan.','Treadmill'],
+  ['Stationary Bike','10 menit','Kayuh dengan intensitas ringan hingga sedang.','Sepeda statis'],
+  ['Sit-up Machine','2 × 12','Lakukan gerakan sesuai petunjuk mesin dan hindari menarik leher.','Sit-up Machine'],
+  ['Plank','2 × 20–30 detik','Jaga tubuh tetap sejajar dan bernapas teratur; hentikan set jika posisi mulai sulit dipertahankan.','Berat badan']
+]}
+];
+const plansB = [
+ {name:'A',short:'DAY A',title:'My · Full Body A',tag:'FULL BODY',desc:'Dada • punggung • kaki • betis • core',note:'Sesi utama pertama. Pilih beban yang nyaman dan sisakan tenaga untuk menjaga kualitas repetisi.',items:[
+  ['Chest Press','3 × 12','Dorong handle ke depan dengan punggung tersangga.','Chest Press Machine'],
+  ['Fixed Lat Pulldown','3 × 12','Tarik bar ke arah dada atas, lalu kembali perlahan.','Fixed Pulldown'],
+  ['Goblet Squat','3 × 12','Pegang dumbbell dekat dada dan lakukan squat secara terkontrol.','Dumbbell'],
+  ['Dumbbell Romanian Deadlift','3 × 12','Dorong pinggul ke belakang dengan punggung netral.','Dumbbell'],
+  ['Dumbbell Calf Raise','2 × 12','Angkat tumit dan turunkan perlahan.','Dumbbell'],
+  ['Plank','2 × 20–30 detik','Jaga tubuh tetap sejajar dan bernapas teratur.','Berat badan']
+ ]},
+ {name:'B',short:'DAY B',title:'My · Full Body B',tag:'FULL BODY',desc:'Punggung • dada • bahu • kaki • glutes',note:'Lakukan setelah ada setidaknya satu hari pemulihan dari Day A. Cable Chest Press menggunakan dua pulley DAP.',items:[
+  ['Standing Cable Row','3 × 12','Tarik handle ke arah badan dengan posisi stabil.','Cable DAP'],
+  ['Cable Chest Press','3 × 12','Berdiri membelakangi titik pulley, dorong kedua handle ke depan secara terkontrol.','Cable DAP'],
+  ['Shoulder Press','2 × 12','Dorong handle ke atas dalam rentang nyaman.','Shoulder Press Machine'],
+  ['Leg Extension','2 × 12','Luruskan lutut pada mesin dan turunkan perlahan.','Leg Extension Machine'],
+  ['Lying Leg Curl','3 × 12','Tekuk lutut pada mesin lying leg curl dan kembali perlahan.','Lying Leg Curl Machine'],
+  ['Barbell Hip Thrust','3 × 12','Dorong pinggul ke atas dengan kontrol menggunakan barbell dan penyangga stabil.','Barbell + bangku stabil']
+ ]},
+ {name:'C',short:'DAY C',title:'My · Optional Fitness Day',tag:'OPTIONAL',desc:'Kebugaran umum • stamina • aktivitas ringan',note:'Opsional, bukan kewajiban. Pilih intensitas yang nyaman dan lakukan hanya jika tubuh sudah pulih.',items:[
+  ['Elliptical Cross Trainer','10–15 menit','Gerakkan tangan dan kaki dengan ritme yang nyaman.','Elliptical'],
+  ['Stationary Bike','10 menit','Kayuh santai hingga sedang.','Sepeda statis'],
+  ['Treadmill Walk','10 menit','Jalan dengan kecepatan nyaman.','Treadmill']
+ ]}
+];
+let activeUser='A',day=0,currentKey='';
+const storageKeys={A:'wesgymchecks_v3_A',B:'wesgymchecks_v2_B'};
+const $=id=>document.getElementById(id);
+function currentPlans(){return activeUser==='A'?plansA:plansB}
+function chooseUser(user){activeUser=user;day=0;currentKey=storageKeys[user];$('home').classList.add('hidden');$('dashboard').classList.remove('hidden');$('brand').innerHTML=(user==='A'?"WE'S GYM":"MY'S GYM")+' <span style="color:var(--green)">↗</span>';$('subtitle').textContent=user==='A'?'Program A · Strength & fitness':'Program B · Fitness, form & strength';render()}
+function goHome(){$('dashboard').classList.add('hidden');$('home').classList.remove('hidden');$('brand').innerHTML="WE'S GYM <span style='color:var(--green)'>↗</span>";$('subtitle').textContent='Pilih profil untuk membuka jadwal latihan.'}
+function loadState(){try{return JSON.parse(localStorage.getItem(currentKey)||'{}')}catch(e){return {}}}
+function saveState(state){localStorage.setItem(currentKey,JSON.stringify(state))}
+function render(){const plans=currentPlans();const tabs=$('tabs');tabs.innerHTML='';tabs.className='daytabs'+(plans.length<=3?' short':'');plans.forEach((p,i)=>{const b=document.createElement('button');b.className='day'+(i===day?' active':'');b.innerHTML=(activeUser==='A'?p.name+'<small>'+p.short+'</small>':p.short);b.onclick=()=>{day=i;render()};tabs.appendChild(b)});
+ const p=plans[day];$('title').textContent=p.title;$('tag').textContent=p.tag;$('desc').textContent=p.desc;$('dayNote').innerHTML='<strong>Catatan:</strong> '+p.note;
+ const state=loadState(),checks=state[day]||{};const list=$('list');list.innerHTML='';p.items.forEach((it,i)=>{const row=document.createElement('label');row.className='item'+(checks[i]?' checked':'');const cb=document.createElement('input');cb.type='checkbox';cb.checked=!!checks[i];cb.setAttribute('aria-label','Tandai '+it[0]+' selesai');cb.onchange=()=>{const s=loadState();s[day]=s[day]||{};s[day][i]=cb.checked;saveState(s);render()};const main=document.createElement('div');main.className='itemMain';const top=document.createElement('div');top.className='itemTop';const name=document.createElement('div');name.className='name';name.textContent=it[0];const equip=document.createElement('span');equip.className='equip';equip.textContent=it[3];top.append(name,equip);const dose=document.createElement('div');dose.className='dose';dose.textContent=it[1];const how=document.createElement('div');how.className='how';how.textContent=it[2];main.append(top,dose,how);row.append(cb,main);list.appendChild(row)});
+ const total=p.items.length,done=p.items.reduce((n,it,i)=>n+(checks[i]?1:0),0),pct=total?Math.round(done/total*100):0;$('count').textContent=done+' / '+total+' selesai';$('bar').style.width=pct+'%';$('percent').textContent=pct+'%';$('progressLabel').textContent=activeUser==='A'?'Progress sesi hari ini':'Progress sesi terpilih';
+}
+$('reset').onclick=()=>{if(!currentKey)return;const state=loadState();delete state[day];saveState(state);render()};
+</script>
+</body>
+</html>
